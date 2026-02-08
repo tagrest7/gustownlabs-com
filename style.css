@@ -1,0 +1,236 @@
+/* ── Reset & Base ── */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-text: #1a1a1a;
+    --color-text-secondary: #555;
+    --color-bg: #fafafa;
+    --color-accent: #2a2a2a;
+    --color-link: #0055cc;
+    --color-link-hover: #003d99;
+    --color-border: #e0e0e0;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --max-width: 640px;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Links ── */
+a.link {
+    color: var(--color-link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+a.link:hover {
+    border-bottom-color: var(--color-link);
+}
+
+/* ── Homepage ── */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+    background: url('background.jpg') center / cover no-repeat fixed;
+    position: relative;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.home .container {
+    max-width: var(--max-width);
+    position: relative;
+    z-index: 1;
+}
+
+.home h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.home-links {
+    font-size: 0.95rem;
+}
+
+.home-links a.link {
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.home-links a.link:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+.home-links .divider {
+    margin: 0 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Product Page (Ball Knower) ── */
+.page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.page-header {
+    margin-bottom: 2.5rem;
+}
+
+.page-header a.back {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+}
+.page-header a.back:hover {
+    color: var(--color-text);
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.page-header .tagline {
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.section h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.section p {
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section ul li {
+    padding: 0.35rem 0;
+    color: var(--color-text);
+}
+
+.section ul li::before {
+    content: "—";
+    margin-right: 0.5rem;
+    color: var(--color-border);
+}
+
+.page-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.page-footer a.link {
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* ── Privacy Policy ── */
+.policy p {
+    margin-bottom: 1rem;
+}
+
+.policy h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.policy ul {
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+}
+
+.policy ul li {
+    padding: 0.2rem 0;
+}
+
+.policy ul li::before {
+    content: none;
+}
+
+.policy ul {
+    list-style: disc;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    .home h1 {
+        font-size: 1.5rem;
+    }
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+    .home-links .divider {
+        display: block;
+        margin: 0.25rem 0;
+        visibility: hidden;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
